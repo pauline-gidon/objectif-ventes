@@ -1,0 +1,719 @@
+@import "./color";
+
+@import "./mixin";
+@import "./starter";
+@import "./anim";
+
+/*---------------------------------------
+         GENERALE
+---------------------------------------*/
+
+
+$radius: 10px;
+$padding_box: 25px;
+$margin_bottom_p :10px;
+
+body {
+    font-family: 'Shippori Antique B1', sans-serif;
+    color: $marine;
+}
+
+/*---------------------------------------
+         HEADER
+---------------------------------------*/
+header{
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top : 0;
+    width: 100%;
+    background: $marine;
+    label {
+        color: $yello;
+    }
+    ul{
+        li{
+            padding: 20px;
+            a {
+                color: $yello;
+                display: block;
+                text-decoration: none;
+                border-bottom:solid 1px transparent;
+                
+            }
+            a:hover {
+                // text-decoration: underline $white;
+                border-bottom:solid 1px $white ;
+            }
+        }
+    }
+}
+h1 {
+    font-size: 100px;
+    text-align: center;
+    padding: 250px 0;
+    color: $marine;
+    font-weight: 1000;
+    z-index: 20;
+    animation: apparition 1.3s ease-out;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+// background h1
+
+.area{
+    position: relative;
+}
+
+.circles{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: #fca211d2;
+    animation: blockh1 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes blockh1 {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+@keyframes arrow {
+
+    from{
+        margin-top: 0;
+    }
+    to {
+        margin-top: 50px;
+    }
+
+}
+// @keyframes transparence {
+//     from {
+//         opacity: 0;
+//     }
+//     to {
+//         opacity: 1;
+//     }
+// }
+
+.containerHeaderSection {
+    @include BackgroungContainerheaderSection;
+    .headerSection{
+        @include flexAllCenterHorizontal();
+        height: 100%;
+        .col1{
+            @include div40();
+            img{
+                @include imgHeaderSection();
+            }
+        }
+        .col2{
+            @include div60();
+        }
+        h2 {
+            color: $white;
+            font-size: 30px;
+        }
+        h3 {
+            font-size: 50px;
+            color: $yello;
+            margin-top: 20px;
+            position: relative;
+        }
+        h3::after {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            content: "\f103";
+            transform: translate(0, -50%);
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            animation: arrow;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border:dashed 2.5px $marine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+    }
+}
+
+
+/*---------------------------------------
+         A PROPO
+---------------------------------------*/
+.containnerApropo{
+    background: $marine;
+    clip-path: polygon(0 10%, 100% 0px, 100% 90%, 0px 100%);
+    .contentApropo {
+        padding: 150px 0;
+
+        h2 {
+            text-align: center;
+            color: $yello;
+            font-size: 50px;
+        }
+
+        .boxeApropo {
+            @include flexAllCenterHorizontal();
+
+            div:first-child{
+                @include div60();
+            }
+            div:nth-child(2){
+                @include div40();
+               
+            }
+            p {
+                margin-bottom: $margin_bottom_p;
+                color: $white;
+                width: 100%;
+            }
+            
+        }
+
+
+        .signature {
+            width: 100%;
+            p {
+                margin-bottom: $margin_bottom_p;
+                color: $yello;
+                text-align: right;
+    
+            }
+            p:first-child {
+                margin-top: 20px;
+            }
+        }
+        
+
+    }
+}
+
+
+
+/*---------------------------------------
+         FORMULAIRE
+---------------------------------------*/
+.formOpen {
+    left: 0!important;
+}
+#formContact {
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient($marine, #14213dee);
+    transition: all 0.7s ease-out;
+}
+.form-box {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    padding: 40px;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: $radius;
+  }
+  
+  .form-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: $yello;
+    text-align: center;
+    font-size: 50px;
+  }
+  
+  .form-box .content-box {
+    position: relative;
+  }
+  
+  .form-box .content-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  
+  .form-box .content-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .form-box .content-box input:focus ~ label,.form-box .content-box input:valid ~ label
+   {
+    top: -20px;
+    left: 0;
+    color: $yello;
+    font-size: 12px;
+  }
+  
+  .form-box form p {
+    position: relative;
+    display: inline-block;
+    color: #03e9f4;
+    font-size: 17px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    border: solid 1px transparent;
+  }
+  
+  .form-box .btnGo:hover, .form-box p:hover {
+    background: #ffffff;
+    color: $yello;
+    border: solid 1.5px $yello;
+    box-shadow: 0 0 5px #ffffff50,
+                0 0 25px #ffffff50,
+                0 0 50px #ffffff50,
+                0 0 100px #ffffff50;
+  }
+  
+  .form-box p span {
+    position: absolute;
+    display: block;
+  }
+  
+  .form-box p span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, $yello);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .form-box p span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 1.5px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, $yello);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .form-box p span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 1.5px;
+    background: linear-gradient(270deg, transparent, $yello);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .form-box p span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 1.5px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, $yello);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+
+  .btnGo {
+    padding: 10px 25px;
+    background-color: inherit;
+    color: #FFF;
+    border:  none;
+    cursor: pointer;
+    font-size: 19px;
+    border: solid 1px transparent;
+
+  }
+.message {
+     font-size: 16px;
+    color: #fff;
+}
+  textarea {
+    resize: none;
+    min-height: 100px;
+    font-family:  Arial;
+    color: $marine;
+    font-weight: 500;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+#close {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    color: $white;
+    font-size: 20px;
+    border-radius: 50%;
+    border: dashed 2px $yello;
+    opacity: 1;
+}
+form div span {
+    color: #f8553a;
+    font-size: 13px;
+}
+
+.mailOK {
+    display: block;
+    background-color: $yello;
+    color: $marine;
+    padding: 15px;
+    border-radius: $radius;
+}
+ footer {
+     background: $marine;
+     padding: 20px;
+     margin-top: 150px;
+     p {
+         text-align: center;
+         a {
+             color: $white;
+        }
+        a:hover {
+            color: $yello;
+
+        }
+    }
+
+ }
+
+/*---------------------------------------
+         MENTIONS LEGALES
+---------------------------------------*/
+.containnerMentionLegale {
+    padding: 100px 0;
+}
+
+.titleh2MentionLegal{
+    font-size: 35px;
+    margin-top: 15px;
+    color: $marine;
+    text-decoration: underline $marine;
+}
+.titleh3MentionLegal{
+    font-size: 25px;
+    margin-top: 15px;
+}
+/*---------------------------------------
+                404
+---------------------------------------*/
+.containner404 {
+    background: $marine;
+    z-index: -2;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    h1 {
+        color: $white;
+        font-size: 200px;
+        position: relative;
+        width: 100%;
+      
+    }
+    h1::after {
+        content: 'Page introuvable !';
+        top: 150px;
+        left: 50%;
+        transform: translate(0, -50%);
+        color: $white;
+        position: absolute;
+        font-size: 30px;
+    }
+}
+/*---------------------------------------
+            card description
+---------------------------------------*/
+.descriptif {
+    color: $marine;
+    margin: 160px auto;
+    h4 {
+        font-size: 43px;
+        margin: 60px 0;
+        text-align: center;
+
+    } 
+
+}
+.descriptif{
+
+    .card {
+        width: 30%;
+        height: 390px;
+        perspective: 1000px;
+        text-align: center;
+        margin: 40px 0px;
+    }
+}
+
+.card-inner {
+    position:relative;
+    width: 100%;
+    height:100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position:absolute;
+    height:100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+    border-radius:8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    // background-position: top ;
+}
+
+.card-front {
+    // background-image:url('images/f');
+    // background-size:cover;
+    // background-position:center center;
+    background: #FFF;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 30px;
+    img {
+        @include imgDescription();
+
+    }
+    p {
+        margin-top: 10px;
+    }
+    // clip-path: polygon(0 0, 100% 0, 100% 85%, 57% 85%, 50% 93%, 43% 85%, 0 85%);
+}
+
+// .card-front:before {
+//     content: '';
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: 0px;
+//     // background: linear-gradient(0deg, $marine, transparent);
+//     // border: solid 1px red;
+//     // clip-path: polygon(0 0, 100% 0, 100% 85%, 57% 85%, 50% 93%, 43% 85%, 0 85%)
+// }
+
+.card-back {
+    transform: rotateY(180deg);
+    background:white;
+    // text-align: center;
+    padding:16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: dashed 2px $marine;
+    margin: 12px;
+}
+
+.card-front {
+    transition: opacity .6s;
+}
+
+.card:hover .card-front {
+    opacity:0;
+}
+.motcle {
+    font-size: 30px;
+}
+
+
+
+/*---------------------------------------
+
+---------------------------------------*/
+/*
+:nth-child(odd)			impaires
+:nth-child(even)		paires
+:nth-child(2)				juste le second
+:nth-child(n+2)			je pars du second et les n suivants
+:nth-child(-n+2)		je pars du second et les n précédents
+:nth-child(4n+2)		je pars du second puis tous les 4 suivants
+:first-child				le premier
+:last-child					le dernier
+:nth-last-child(2)	avant dernier
+*/

@@ -1,0 +1,49 @@
+@import "./color";
+
+
+@mixin flexOneCenterHorizontal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+@mixin flexAllCenterHorizontal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+@mixin flexAllCenterVertical{
+    @include flexOneCenterHorizontal();
+    flex-direction: column;
+}
+@mixin BackgroungContainerheaderSection {
+    background-color: $red;
+    clip-path: polygon(0 0, 100% 0px, 100% 90%, 0px 100%);
+    width: 100vw;
+    height: 700px;
+    animation: transparence 2.5s ease-out;
+
+}
+@mixin div40 {
+    width: 39%;
+    @media screen and (max-width: 965px){
+        width: 100%;
+    }
+}
+@mixin div60 {
+    width: 59%;
+    @media screen and (max-width: 965px){
+        width: 100%;
+    }
+}
+@mixin imgHeaderSection {
+    width: 80%; 
+    max-width: 500px;
+    
+}
+@mixin imgDescription {
+    width: 70%;
+    max-width: 315px;
+    
+}

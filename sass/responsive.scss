@@ -1,0 +1,187 @@
+@import "./style";
+
+/*---------------------------------------
+POINTS DE RUPTURE UTILES AU PROJET
+---------------------------------------*/
+#burger, #burger + label {
+	display: none;
+}
+
+@media screen and (max-width: 1024px){
+    .descriptif{
+        .card:first-child , .card:nth-child(2){
+            width: 49%;
+        }
+        .card:nth-child(3) {
+            width: 100%;
+            
+        }
+    }
+    .containnerApropo{
+        .contentApropo {
+            h2 {
+                padding-bottom: 50px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 965px){
+	.wrap {
+		width: 87%;
+	}
+    header{
+        nav {
+            position: absolute;
+            top:70px;
+            right: 0;
+            background: $marine;
+            width: 20% !important;
+            min-width: 205px !important;
+   
+            ul{
+                display: block!important;
+            }
+        }
+    }
+
+
+	#burger {
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		width: 40px;
+		height: 40px;
+		display: block;
+		cursor: pointer;
+		opacity: 0;
+		z-index: 21;
+	}
+	#burger + label {
+		display: block;
+		padding: 5px 0 10px 50px;
+		background-image: url(../images/burgerSprite.svg);
+		background-repeat: no-repeat;
+		background-size: 40px;
+		background-position: left top;
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		z-index: 2;
+		transition: All 0.2s ease;
+	}
+	header {
+		padding-top: 70px;
+	}
+	#burger:checked + label {
+		background-position: left bottom;
+	}
+	header nav {
+		display: none;
+	}
+	#burger:checked ~ nav {
+		display: block;
+	}
+    .containerHeaderSection {
+        height: 1050px;
+        // @include BackgroungContainerheaderSection;
+        .headerSection{
+            // display: block;
+            // min-height: 1500px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            // height: auto;
+            // padding-top: 50px;
+            // min-height: 1500px;
+            // margin: 0 auto;
+            .col1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 50px auto;
+                width: 100%;
+                // img {
+                //     width: 50%;
+                //     margin: 0 auto;
+                // }
+                // @include div40();
+                // @include imgHeaderSection();
+            }
+            .col2{
+                // @include div60();
+                width: 100%;
+                margin: 0 auto;
+                // text-align: center;
+                h3 {
+                    font-size: 42px;
+                }
+                .animeTitleSection:nth-child(n+2) {
+                    padding-bottom: 50px;
+                }
+            }
+        }
+    }
+
+    .containnerApropo{
+        .contentApropo {
+            .boxeApropo {
+                flex-direction: column;
+                flex-direction: column-reverse;
+            }
+            .signature {
+                p {
+                }
+                p:first-child {
+                }
+            }
+        }
+    }
+    .containnerMentionLegale {
+        h1 {
+            font-size: 50px;
+            padding: 50px 0;
+        }
+    }
+
+
+
+}
+
+@media screen and (max-width: 600px){
+    .descriptif{
+        .card:first-child , .card:nth-child(2){
+            width: 100%;
+        }
+
+    }
+
+}
+@media screen and (max-width: 557px){
+    .containerHeaderSection {
+        .headerSection{
+            h3::after {
+                top: 183px;
+            }
+        }
+    }
+    .containnerApropo{
+        .contentApropo {
+            .signature {
+                p:first-child {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 355px){
+    h1 {
+        font-size: 50px;
+        padding: 150px 0;
+    }
+
+}

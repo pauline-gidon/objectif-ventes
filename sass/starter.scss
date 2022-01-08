@@ -1,0 +1,60 @@
+
+@import "./reset";
+/*---------------------------------------
+LE JEU GENERAL DE CLASSES UTILES POUR
+DEMARRER UN GRAND NOMBRE DE NOS MISES
+EN PAGE
+---------------------------------------*/
+.wrap {
+	width: 80%;
+	margin: 0 auto;
+	max-width: 2560px;
+}
+.full-img {
+	width: 100%;
+}
+.mla {
+    margin-left: auto;
+}
+.fc {
+	display: flex;
+}
+.jc-sb {
+	justify-content: space-between;
+}
+.jc-sa {
+	justify-content: space-around;
+}
+.jc-c {
+	justify-content: center;
+}
+.jc-fe {
+	justify-content: flex-end;
+}
+/*--*/
+.ai-c {
+	align-items: center;
+}
+.ai-fe {
+	align-items: flex-end;
+}
+
+.fd-rr {
+	flex-direction: row-reverse;
+}
+.fd-c {
+	flex-direction: column;
+}
+.fd-r {
+	flex-direction: row;
+}
+.fd-cr {
+	flex-direction: column-reverse;
+}
+.fw {
+	flex-wrap: wrap;
+}
+.ac-fs {
+	align-content: flex-start;
+}
+/*center | space-around | space-between | flex-start | flex-end*/
