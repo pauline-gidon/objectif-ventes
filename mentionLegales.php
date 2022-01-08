@@ -56,6 +56,9 @@
         <h3 class="titleh3MentionLegal">Image</h3>
         <p><strong>Propriétaire</strong> : <a href="https://storyset.com/business">Business illustrations by Storyset</a></p>
 
+        <p class="linkAccueil"><a href="index.php">Accueil</a>
+        </p>
+
 
     </main>
     <!-- formulaire -->
