@@ -29,8 +29,12 @@
                     <li></li>
                     <li></li>
             </ul>
-            <h1 class="title404">404</h1>
-    </div>
+           
+                    <h1 class="title404">404</h1>
+                    
+                    
+                    <p><a href="index.php">Continuer</a></p>
+                </div>
 
 
 </body>

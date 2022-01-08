@@ -572,10 +572,14 @@ form div span {
 ---------------------------------------*/
 .containner404 {
     background: $marine;
-    z-index: -2;
+    // z-index: -2;
     position: relative;
     width: 100vw;
-    height: 100vh;
+    // overflow-x: hidden;
+    // overflow-y: hidden;
+    .circles {
+        z-index: 10;
+    }
     h1 {
         color: $white;
         font-size: 200px;
@@ -587,11 +591,23 @@ form div span {
         content: 'Page introuvable !';
         top: 150px;
         left: 50%;
-        transform: translate(0, -50%);
+        transform: translate(-50%, -50%);
         color: $white;
         position: absolute;
         font-size: 30px;
     }
+    a {
+        position: absolute;
+        top: 650px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+        z-index: 50;
+        font-size: 30px;
+        text-decoration: underline;
+        // cursor: pointer;
+    }
+ 
 }
 /*---------------------------------------
             card description

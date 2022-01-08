@@ -1,0 +1,13 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+RewriteCond %{SERVER_PORT} ^80$
+
+#RewriteRule ^(.*)$ https://monsite.com/$1 [R]
+
+#redirection www.picmento.fr vers picmento.fr (o2switch uniquement)
+#RewriteCond %{HTTP_HOST} ^www.yoursite.com 
+#RewriteRule (.*) https://yoursite.com/$1 [R=301,L]
+
+#Ici vos règles de réécriture
+ErrorDocument 404 /404.php
