@@ -575,8 +575,8 @@ form div span {
     // z-index: -2;
     position: relative;
     width: 100vw;
-    // overflow-x: hidden;
-    // overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
     .circles {
         z-index: 10;
     }

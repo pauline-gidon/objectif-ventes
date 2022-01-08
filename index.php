@@ -408,6 +408,7 @@ if(isset($_POST["go"])) {
 
 <script src="public/js/modaleContact.js" defer></script>
 <script src="public/js/feedback.js" defer></script>
+<script src="public/js/scollX.js" defer></script>
 
 </body>
 </html>

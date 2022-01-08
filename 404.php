@@ -36,6 +36,6 @@
                     <p><a href="index.php">Continuer</a></p>
                 </div>
 
-
+<script src="public/js/scoll.js" defer></script>
 </body>
 </html>
