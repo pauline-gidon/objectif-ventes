@@ -80,6 +80,8 @@ if(isset($_POST["go"])) {
     <script src="https://kit.fontawesome.com/9e45878e2c.js" crossorigin="anonymous"></script>
     <!-- lien jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- cookies -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
 </head>
 <body>
@@ -421,6 +423,9 @@ if(isset($_POST["go"])) {
 <script src="public/js/modaleContact.js" defer></script>
 <script src="public/js/feedback.js" defer></script>
 <script src="public/js/scollX.js" defer></script>
+<!-- cookies -->
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script src="public/js/cookies.js" defer></script>
 
 </body>
 </html>
