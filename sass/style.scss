@@ -1,5 +1,4 @@
 @import "./color";
-
 @import "./mixin";
 @import "./starter";
 @import "./anim";
@@ -49,13 +48,15 @@ header{
     }
 }
 h1 {
-    font-size: 100px;
+    font-size: 121px;
     text-align: center;
     padding: 250px 0;
     color: $marine;
     font-weight: 1000;
     z-index: 20;
     animation: apparition 1.3s ease-out;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 9px;
 }
 
 @keyframes apparition {
@@ -575,6 +576,31 @@ form div span {
         text-decoration: underline;
         font-size: 18px;
     }
+}
+/*---------------------------------------
+         POLITIQUE CONFIDENTIALITE
+---------------------------------------*/
+.containnerPolitique {
+    h2 {
+        font-size: 35px;
+        margin-top: 15px;
+        color: $marine;
+        text-decoration: underline $marine;
+    }
+    h3 {
+        font-size: 25px;
+        margin-top: 15px;
+    }
+    .listePolitique {
+        padding-left: 20px;
+    }
+    p {
+        margin-bottom: 11px;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+
 }
 /*---------------------------------------
                 404

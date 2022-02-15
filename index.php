@@ -72,8 +72,12 @@ if(isset($_POST["go"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap" rel="stylesheet"> 
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet"> 
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    
+    <script src="https://kit.fontawesome.com/9e45878e2c.js" crossorigin="anonymous"></script>
     <!-- lien jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -86,7 +90,7 @@ if(isset($_POST["go"])) {
             <ul class="fc">
                 <li><a href="#former" title="Former">Former</a></li>
                 <li><a href="#accompagner" title="Accompagner">Accompagner</a></li>
-                <li><a href="#pack" title="Pack de formations">Pack de formations</a></li>
+                <li><a href="#pack" title="Pack de formations">Former & Accompagner</a></li>
                 <li class="mla"><a href="#me" title="A propos">A propos</a></li>
                 <li id="contact"><a href="#" title="Contact">Contact</a></li>
             </ul>
@@ -210,7 +214,7 @@ if(isset($_POST["go"])) {
              <!-- description accompagner -->
               
             <div class="descriptif wrap">
-                <h4 class="fc jc-c ai-c">Etre accompagner</h4>
+                <h4 class="fc jc-c ai-c">Etre accompagné</h4>
 
                 <div class="fc fw jc-sb">
                     <!-- card accompagner -->
@@ -235,7 +239,7 @@ if(isset($_POST["go"])) {
 
                             </div>
                             <div class="card-back">
-                                <p>Bien réalisé ses rendez-vous ainsi que son ... sont important pour le développement de sa profession.</p>
+                                <p>Bien réaliser ses rendez-vous ainsi que son activité sont importants pour le développement de sa profession.</p>
                             </div>
                         </div>
                     </div>
@@ -249,7 +253,7 @@ if(isset($_POST["go"])) {
                             </div>
                             <div class="card-back">
                                                        
-                                <p>Suite à mon observation après vous avoir accompagné lors de votre activité, je vous apporterais mon expertise professionnelle.</p>
+                                <p>Suite à mon observation après vous avoir accompagné lors de votre activité, je vous apporterai mon expertise professionnelle.</p>
                             </div>
                         </div>
                     </div>
@@ -279,7 +283,7 @@ if(isset($_POST["go"])) {
              <!-- FIN header section former/accompagner -->
                        
             <div class="descriptif wrap">
-                <h4 class="fc jc-c ai-c">La clée de la réussite</h4>
+                <h4 class="fc jc-c ai-c">La clé de la réussite</h4>
 
                 <div class="fc fw jc-sb">
 
@@ -339,8 +343,8 @@ if(isset($_POST["go"])) {
                         
                         <div>
                                 <p>Ayant la fibre commerciale et relationnelle depuis toujours, c'est tout naturellement que je m'oriente vers un parcours commercial en ventes commencé il y a maintenant deux décénnies.</p>
-                                <p>Au fil des années, j'ai appris et acquis un bon nombre de techniques commerciales qu j'ai su mettre en application et qui ont porté leurs fruits.</p>
-                                <p>Aujourd'hui, je vous propose de vous les transmettre avec passion et energie.</p>
+                                <p>Au fil des années, j'ai appris et acquis un bon nombre de techniques commerciales que j'ai su mettre en application et qui ont porté leurs fruits.</p>
+                                <p>Aujourd'hui, je vous propose de vous les transmettre avec passion et énergie.</p>
                         </div>
                         <div>
                             <img src="public/images/me.svg" alt="" class="full-img">
@@ -349,6 +353,11 @@ if(isset($_POST["go"])) {
                     <div class="signature">
                         <p>A très vite pour une belle aventure ensemble&nbsp;!</p>
                         <p>Romain</p>
+                        <p class="fc fw">
+                            <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                            <a href=""><i class="fa-brands fa-instagram"></i></a>
+                            <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        </p>
                     </div>
                 </div>
 
@@ -356,6 +365,8 @@ if(isset($_POST["go"])) {
             
         </section>
     </main>
+
+
     <!-- formulaire -->
     <div id="formContact" class="fc jc-c ai-c">
         <div class="form-box">
@@ -402,7 +413,8 @@ if(isset($_POST["go"])) {
     </div>
 
     <footer>
-            <p><a href="mentionLegales.php">Mentions Légale</a></p>
+            <p><a href="mentionLegales.php">Mentions Légales</a></p>
+            <p><a href="politique.php">Politique de confidentialité</a></p>
     </footer>
 <!-- Tout le Javascript -->
 

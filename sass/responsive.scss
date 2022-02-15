@@ -129,12 +129,12 @@ POINTS DE RUPTURE UTILES AU PROJET
                 flex-direction: column;
                 flex-direction: column-reverse;
             }
-            .signature {
-                p {
-                }
-                p:first-child {
-                }
-            }
+            // .signature {
+            //     p {
+            //     }
+            //     p:first-child {
+            //     }
+            // }
         }
     }
     .containnerMentionLegale {
@@ -161,7 +161,7 @@ POINTS DE RUPTURE UTILES AU PROJET
     .containerHeaderSection {
         .headerSection{
             h3::after {
-                top: 183px;
+                top: 182px;
             }
         }
     }

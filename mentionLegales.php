@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet"> 
+
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
@@ -56,8 +58,17 @@
         <h3 class="titleh3MentionLegal">Image</h3>
         <p><strong>Propriétaire</strong> : <a href="https://storyset.com/business">Business illustrations by Storyset</a></p>
 
+        
+        <h2 class="titleh2MentionLegal">Info société</h2>
+        <!-- <h3 class="titleh3MentionLegal">Numéro SIREN</h3> -->
+        <p><strong>Numéro SIREN</strong> :  850182411 </p>
+        <p><strong>Numéro SIRET (siège)</strong> :  85018241100015 </p>
+        <p><strong>Numéro TVA Intracommunautaire</strong> :  FR48850182411 </p>
+        <p><strong>Adresse siège</strong> :  38330 ST Ismier </p>
+        
         <p class="linkAccueil"><a href="index.php">Accueil</a>
         </p>
+
 
 
     </main>
