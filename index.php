@@ -78,6 +78,8 @@ if(isset($_POST["go"])) {
     <!-- font awesome -->
     
     <script src="https://kit.fontawesome.com/9e45878e2c.js" crossorigin="anonymous"></script>
+    <!-- allIcone -->
+    <link rel="stylesheet" href="public/css/icofont/icofont.min.css">
     <!-- lien jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- cookies -->
@@ -355,10 +357,11 @@ if(isset($_POST["go"])) {
                     <div class="signature">
                         <p>A très vite pour une belle aventure ensemble&nbsp;!</p>
                         <p>Romain</p>
-                        <p class="fc fw">
-                            <a href=""><i class="fa-brands fa-twitter-square"></i></a>
-                            <a href=""><i class="fa-brands fa-instagram"></i></a>
-                            <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <p class="fc fw jc-fe">
+                            <a href="https://twitter.com/ObjectifVente" target="_blank"><i class="icofont-twitter"></i></a>
+                            <a href="https://www.facebook.com/Objectif-Vente-110288224911538" target="_blank"><i class="icofont-facebook"></i></a>
+                            <a href="" target="_blank"><i class="icofont-instagram"></i></a>
+
                         </p>
                     </div>
                 </div>

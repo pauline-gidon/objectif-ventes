@@ -303,6 +303,17 @@ h1 {
             p:first-child {
                 margin-top: 20px;
             }
+            i {
+                color: $red;
+                font-size: 37px;
+                margin-top: 22px;
+                margin-left: 10px;
+                display: block;
+
+            }
+            i:hover {
+                color:$grey;
+            }
         }
         
 
