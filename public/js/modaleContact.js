@@ -31,7 +31,7 @@ if (errors.length > 0) {
     console.log(cross);
     cross.addEventListener('click', function() {
 
-        setTimeout(modaleClose, 3000);
+        modaleClose();
     });
 
   }
