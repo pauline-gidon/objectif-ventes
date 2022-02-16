@@ -1,71 +1,73 @@
 <?php 
-if(isset($_POST["go"])) {
- 
-    //-------------------------------------------------------------------
-    //ETAPE 2 : JE VENTILE LES DATAS EN EFFECTUANT
-    //UN PREMIER NETTOYAGE
-    //--------------------------------------------------------------------
+include 'vendor.php';
+
+//captcha spam
+if(chek_token($POST['g-recaptcha-response'],CAPTCHA_SITE_KEY_SECRET)){
+
+    //ETAPE 1 : traitement formulaire
+    if(isset($_POST["go"])) {
+    
+        //-------------------------------------------------------------------
+        //ETAPE 2 : JE VENTILE LES DATAS EN EFFECTUANT
+        //UN PREMIER NETTOYAGE
+        //--------------------------------------------------------------------
         $nom  = htmlspecialchars(strip_tags(trim($_POST["nom"])));
         $sujet   = htmlspecialchars(strip_tags(trim($_POST["sujet"])));
         $email    = htmlspecialchars(strip_tags(trim($_POST["email"])));
         $message    = htmlspecialchars(strip_tags(trim($_POST["message"])));
-
-   
         $ok      = true;
-    // --------------------------------------------------------------------
-    // ETAPE 3 : JE VERIFIE ET MESSAGE D'ERREURS
-    //---------------------------------------------------------------------
-    if(empty($nom)){
-        $error1 = "Votre Nom ou Prénom est obligatoire"; 
-        $ok = false;
-    }
-    if(empty($sujet)){
-        $error2 = "Le sujet est obligatoire"; 
-        $ok = false;
-    }
-    if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-        $error3 = "Une adresse mail valide"; 
-        $ok = false;
-    }
-    if(empty($message)){
-        $error4 = "Le message est obligatoire"; 
-        $ok = false;
-    }
-    if(!isset($_POST["rgpd"])){
-        $error5 = "Vous devez accepter les conditions pour être recontacté"; 
-    $ok = false;
-    }
-
-    // --------------------------------------------------------------------
-    // ETAPE 4 : SI PAS D'ERREUR, ALORS TRAITEMENT FINAL...
-    //---------------------------------------------------------------------
-    if($ok) {
-    //ON VA ENVISAGER UN TRAITEMENT FINAL
-    //AVEC UN DERNIER NETTOYAGE SPECIFIQUE AU TRAITEMENT
-    //-Insert BDD, nettoyage avant les insertions en BDD
-    //-Envoyer à une adresse mail, nettoyage specifique avant envoi
-    //-...
-    // var_dump("plus d'erreur, traitement final possible");
-    // die();
-    $expediteur = 'p@picmento.fr';
-    $destinataire = 'pauline.gidon@gmail.com';
-    
-    $entete = "From : ".$expediteur;
-
-    $contenue_message = utf8_decode($message)."\r\n";
-    $contenue_message = "De : ".$email.", Sujet : ".$sujet.", ".$contenue_message;
-    
-    $sucess = mail($destinataire,$sujet,$contenue_message, $entete);
-        
-        if($sucess){
-            $mailenvoyer = "<span class=\"mailOK\">Votre message a bien été envoyer</span>";
-            unset($nom,$message,$sujet,$email);
-         
+        // --------------------------------------------------------------------
+        // ETAPE 3 : JE VERIFIE ET MESSAGE D'ERREURS
+        //---------------------------------------------------------------------
+        if(empty($nom)){
+            $error1 = "Votre Nom ou Prénom est obligatoire"; 
+            $ok = false;
         }
-    }
-    
-    
-}
+        if(empty($sujet)){
+            $error2 = "Le sujet est obligatoire"; 
+            $ok = false;
+        }
+        if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+            $error3 = "Une adresse mail valide"; 
+            $ok = false;
+        }
+        if(empty($message)){
+            $error4 = "Le message est obligatoire"; 
+            $ok = false;
+        }
+        if(!isset($_POST["rgpd"])){
+            $error5 = "Vous devez accepter les conditions pour être recontacté"; 
+        $ok = false;
+        }
+        // --------------------------------------------------------------------
+        // ETAPE 4 : SI PAS D'ERREUR, ALORS TRAITEMENT FINAL...
+        //---------------------------------------------------------------------
+        if($ok) {
+        //ON VA ENVISAGER UN TRAITEMENT FINAL
+        //AVEC UN DERNIER NETTOYAGE SPECIFIQUE AU TRAITEMENT
+        //-Insert BDD, nettoyage avant les insertions en BDD
+        //-Envoyer à une adresse mail, nettoyage specifique avant envoi
+        //-...
+        // var_dump("plus d'erreur, traitement final possible");
+        // die();
+        $expediteur = 'p@picmento.fr';
+        $destinataire = 'pauline.gidon@gmail.com';
+        
+        $entete = "From : ".$expediteur;
+
+        $contenue_message = utf8_decode($message)."\r\n";
+        $contenue_message = "De : ".$email.", Sujet : ".$sujet.", ".$contenue_message;
+        
+        $sucess = mail($destinataire,$sujet,$contenue_message, $entete);
+        
+            if($sucess){
+                $mailenvoyer = "<span class=\"mailOK\">Votre message a bien été envoyer</span>";
+                unset($nom,$message,$sujet,$email);
+            
+            }
+        }//traitement final envoie du mail
+    }//if go
+}//captcha
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -90,6 +92,14 @@ if(isset($_POST["go"])) {
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- cookies -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <!-- recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo CAPTCHA_SITE_KEY?>"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script> -->
+
+
+
 
 </head>
 <body>
@@ -387,7 +397,7 @@ if(isset($_POST["go"])) {
             <h2>Contact</h2>
           
 
-            <form action="index.php" method="post" enctype="multipart/form-data">
+            <form id="my_form" action="index.php" method="post" enctype="multipart/form-data">
                 <div class="content-box">
                     <?php if(isset($error1)) echo "<span class=\"error\">".$error1."</span>"; ?>
                     <input type="text" name="nom" required="" <?php if(isset($nom)) echo "value=\"$nom\"";?>>
@@ -426,6 +436,18 @@ if(isset($_POST["go"])) {
                     <span></span>
                     <input type="submit" name="go" value="Envoyer" class="btnGo">
                 </p>
+                <!-- captcha -->
+                <button class="g-recaptcha" 
+                    data-sitekey="<?php echo CAPTCHA_SITE_KEY?>" 
+                    data-callback='onSubmit' 
+                    data-action='submit'>Submit
+                </button>
+                <script>
+                    function onSubmit(token) {
+                        document.getElementById("my_form").submit();
+                    }
+                </script>
+
             </form>
         </div>
     </div>
@@ -442,6 +464,7 @@ if(isset($_POST["go"])) {
 <!-- cookies -->
 <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
 <script src="public/js/cookies.js" defer></script>
+<script src="public/js/captcha.js" defer></script>
 
 </body>
 </html>
