@@ -1,8 +1,7 @@
 // je cible mes 3 element pour la fonction
 const contact = document.querySelector("#contact");
 const formulaire = document.querySelector("#formContact");
-const close = document.querySelector("#close");
-console.log()
+const cross = document.querySelector("#close");
 
 function animateModale() {
     formulaire.style.left = 0;
@@ -18,17 +17,21 @@ contact.addEventListener('click', function(event) {
     
 });
 
-close.addEventListener('click', function() {
+cross.addEventListener('click', function() {
     // formulaire.style.left = '-'+100+'vw';
     formulaire.classList.remove('formOpen');
     // setTimeout(modaleClose, 3000);
 });
 
-// feedback
-const feedback = document.querySelector(".mailOK");
+// laisser apparaitre le formulaire en cas d'erreur d'envoie
+const errors = document.querySelectorAll(".error");
+if (errors.length > 0) {
+    animateModale();
+    
+    console.log(cross);
+    cross.addEventListener('click', function() {
 
-function closefeedback() {
-    feedback.style.display = 'none';
-}
+        setTimeout(modaleClose, 3000);
+    });
 
-setTimeout(closefeedback, 3000);
+  }

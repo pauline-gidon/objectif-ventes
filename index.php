@@ -1,6 +1,6 @@
 <?php 
 if(isset($_POST["go"])) {
-  
+ 
     //-------------------------------------------------------------------
     //ETAPE 2 : JE VENTILE LES DATAS EN EFFECTUANT
     //UN PREMIER NETTOYAGE
@@ -9,6 +9,8 @@ if(isset($_POST["go"])) {
         $sujet   = htmlspecialchars(strip_tags(trim($_POST["sujet"])));
         $email    = htmlspecialchars(strip_tags(trim($_POST["email"])));
         $message    = htmlspecialchars(strip_tags(trim($_POST["message"])));
+
+   
         $ok      = true;
     // --------------------------------------------------------------------
     // ETAPE 3 : JE VERIFIE ET MESSAGE D'ERREURS
@@ -28,6 +30,10 @@ if(isset($_POST["go"])) {
     if(empty($message)){
         $error4 = "Le message est obligatoire"; 
         $ok = false;
+    }
+    if(!isset($_POST["rgpd"])){
+        $error5 = "Vous devez accepter les conditions pour être recontacté"; 
+    $ok = false;
     }
 
     // --------------------------------------------------------------------
@@ -121,6 +127,7 @@ if(isset($_POST["go"])) {
                     <li></li>
                     <li></li>
             </ul>
+            
             <h1>Objectif Ventes</h1>
         </div>
         <!-- FORMER -->
@@ -346,7 +353,7 @@ if(isset($_POST["go"])) {
                     <div class="boxeApropo">
                         
                         <div>
-                                <p>Ayant la fibre commerciale et relationnelle depuis toujours, c'est tout naturellement que je m'oriente vers un parcours commercial en ventes commencé il y a maintenant deux décénnies.</p>
+                                <p>Ayant la fibre commerciale et relationnelle depuis toujours, c'est tout naturellement que je m'oriente vers un parcours commercial en ventes commencé il y a maintenant deux décennies.</p>
                                 <p>Au fil des années, j'ai appris et acquis un bon nombre de techniques commerciales que j'ai su mettre en application et qui ont porté leurs fruits.</p>
                                 <p>Aujourd'hui, je vous propose de vous les transmettre avec passion et énergie.</p>
                         </div>
@@ -405,8 +412,14 @@ if(isset($_POST["go"])) {
                     <textarea name="message" cols="20" rows="5" placeholder="Votre message..." required=""><?php if(isset($message)) echo $message;?></textarea>
                     
                 </div>
-                
-                <p>
+                <!-- SWITCHES -->
+                    <div class="switch">
+                        <input type="checkbox" id="switch1" class="switch__input" name="rgpd" value=rgpd>
+                        <label for="switch1" class="switch__label">En soumettant ce formulaire, j’accepte que les informations saisies utilisées pour être recontactées.</label>
+                        <?php if(isset($error5)) echo "<span class=\"error\">".$error5."</span>"; ?>
+                    </div>
+
+                <p >
                     <span></span>
                     <span></span>
                     <span></span>
