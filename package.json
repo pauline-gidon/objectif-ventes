@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/responsive.scss:./public/css/style.css --style compressed"
+    "style": "sass --watch ./sass/style.scss:./public/css/style.css --style compressed",
+    "404": "sass --watch ./sass/404.scss:./public/css/404.css --style compressed",
+    "responsive": "sass --watch ./sass/responsive.scss:./public/css/responsive.css --style compressed"
   },
   "author": "",
   "license": "ISC"

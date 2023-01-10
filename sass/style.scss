@@ -1,6 +1,7 @@
 @import "./color";
 @import "./mixin";
 @import "./starter";
+@import "./reset";
 @import "./anim";
 
 //---------------------------------------
@@ -15,6 +16,9 @@ $margin_bottom_p :10px;
 body {
     font-family: 'Shippori Antique B1', sans-serif;
     color: $marine;
+}
+strong {
+    font-weight: normal;
 }
 
 //---------------------------------------
@@ -47,32 +51,33 @@ header{
         }
     }
 }
-h1 {
-    font-size: 121px;
-    text-align: center;
-    padding: 250px 0;
-    color: $marine;
-    font-weight: 1000;
-    z-index: 20;
-    animation: apparition 1.3s ease-out;
-    font-family: 'Alfa Slab One', cursive;
-    letter-spacing: 9px;
-}
-
-@keyframes apparition {
-    from {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
 // background h1
 
 .area{
     position: relative;
+    h1 {
+        font-size: 121px;
+        text-align: center;
+        padding: 250px 0;
+        color: $marine;
+        font-weight: 1000;
+        z-index: 20;
+        animation: apparition 1.3s ease-out;
+        font-family: 'Alfa Slab One', cursive;
+        letter-spacing: 9px;
+    }
+
+    
+    @keyframes apparition {
+        from {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
 }
 
 .circles{
@@ -200,15 +205,15 @@ h1 {
     }
 
 }
-// @keyframes transparence {
-//     from {
-//         opacity: 0;
-//     }
-//     to {
-//         opacity: 1;
-//     }
-// }
-
+.titleDescritpiton {
+    padding-bottom: 150px;
+    font-size: 20px;
+}
+main {
+    section {
+        margin-bottom: 150px;
+    }
+}
 .containerHeaderSection {
     @include BackgroungContainerheaderSection;
     .headerSection{
@@ -615,6 +620,15 @@ form div span {
     border-radius: $radius;
     margin-top: 100px;
 }
+.mailNotOK {
+    display: block;
+    background-color: $red;
+    color: $grey;
+    padding: 30px;
+    border-radius: $radius;
+    margin-top: 100px;
+
+}
 
 
 .grecaptcha-badge { visibility: hidden; }
@@ -645,6 +659,17 @@ footer {
 //---------------------------------------*/
 .containnerMentionLegale {
     padding: 100px 0;
+    h1{
+        font-size: 121px;
+        text-align: center;
+        padding: 250px 0;
+        color: $marine;
+        font-weight: 1000;
+        z-index: 20;
+        animation: apparition 1.3s ease-out;
+        font-family: 'Alfa Slab One', cursive;
+        letter-spacing: 9px;
+    }
 }
 
 .titleh2MentionLegal{
@@ -673,6 +698,18 @@ footer {
 //         POLITIQUE CONFIDENTIALITE
 //---------------------------------------*/
 .containnerPolitique {
+    
+    h1{
+        font-size: 121px;
+        text-align: center;
+        padding: 250px 0;
+        color: $marine;
+        font-weight: 1000;
+        z-index: 20;
+        animation: apparition 1.3s ease-out;
+        font-family: 'Alfa Slab One', cursive;
+        letter-spacing: 9px;
+    }
     h2 {
         font-size: 35px;
         margin-top: 15px;
@@ -693,46 +730,6 @@ footer {
         margin-bottom: 8px;
     }
 
-}
-//---------------------------------------
-//                404
-//---------------------------------------*/
-.containner404 {
-    background: $marine;
-    position: relative;
-    width: 100vw;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    .circles {
-        z-index: 10;
-    }
-    h1 {
-        color: $white;
-        font-size: 200px;
-        position: relative;
-        width: 100%;
-      
-    }
-    h1::after {
-        content: 'Page introuvable !';
-        top: 150px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: $white;
-        position: absolute;
-        font-size: 30px;
-    }
-    a {
-        position: absolute;
-        top: 650px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: $white;
-        z-index: 50;
-        font-size: 30px;
-        text-decoration: underline;
-    }
- 
 }
 //---------------------------------------
 //            card description

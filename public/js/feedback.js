@@ -1,8 +1,10 @@
 // feedback
 const feedback = document.querySelector(".mailOK");
 
-function closefeedback() {
-    feedback.style.display = 'none';
+if(feedback){
+    function closefeedback() {
+        feedback.style.display = 'none';
+    }
 }
 
-setTimeout(closefeedback, 4000);
+setTimeout(closefeedback, 6000);
